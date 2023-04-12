@@ -2,7 +2,7 @@ import logging
 
 
 class Settings(object):
-    logger_name = 'annotation-gpt'
+    logger_name = "annotation-gpt"
 
 
 settings = Settings()
