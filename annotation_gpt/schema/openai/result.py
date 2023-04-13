@@ -1,7 +1,29 @@
-from typing import List, Text, TYPE_CHECKING, TypedDict
+from typing import Any, List, Optional, Text, TYPE_CHECKING, TypedDict
 
 if TYPE_CHECKING:
     from annotation_gpt.schema.chat import Message
+
+
+class CompletionChoice(TypedDict):
+    finish_reason: Text
+    index: int
+    logprobs: Optional[Any]
+    text: Text
+
+
+class CompletionUsage(TypedDict):
+    completion_tokens: int
+    prompt_tokens: int
+    total_tokens: int
+
+
+class CompletionResult(TypedDict):
+    choices: List[CompletionChoice]
+    created: int
+    id: Text
+    model: Text
+    object: Text
+    usage: CompletionUsage
 
 
 class ChatCompletionUsage(TypedDict):
