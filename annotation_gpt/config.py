@@ -1,4 +1,8 @@
 import logging
+from rich.console import Console
+
+
+console = Console()
 
 
 class Settings(object):
